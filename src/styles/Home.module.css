@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.portas {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+  flex-wrap: wrap;
+}
