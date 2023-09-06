@@ -1,9 +1,13 @@
 import styles from '../styles/Porta.module.css'
 import React from 'react'
 
-const Porta = (props) => {
+interface Infos {
+  selecionada : boolean
+}
+
+const Porta = (props: Infos) => {
   const [abriu, setAbriu] = React.useState(false)
-   const selecionada = props?.selecionada ? styles.selecionada : ''
+   const selecionada = props.selecionada ? styles.selecionada : ''
   return (
     <div className={styles.area} >
       <div className={`${styles.batente} ${selecionada ? styles.selecionada : ''} `}>
