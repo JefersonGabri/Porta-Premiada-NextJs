@@ -4,12 +4,6 @@ import Presente from '@/components/Presente';
 import Porta from '@/components/Porta';
 
 export default function Home() {
-  // const [selecionada, setSelecionada] = React.useState(false)
-
-  const color: number = 5;
-
-  console.log(color);
-
   return (
     <>
       <Head>
@@ -21,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <Presente />
         <div className={styles.portas}>
-          <Porta selecionada={true}/>
+          <Porta />
           <Porta />
           <Porta />
           <Porta /> 
