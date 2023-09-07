@@ -1,11 +1,25 @@
 .presente {
+  position: relative;
   display: flex;
    flex-direction: column;
   align-items: center;
   max-width: max-content;
   position: relative;
   margin: 0 auto;
-  }
+  top: 345px;
+  z-index: 1;
+}
+
+.presente::after {
+  content: '';
+  width: 100%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+  filter: blur(3px);
+}
 
 .tampa {
   width: 100px;

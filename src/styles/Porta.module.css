@@ -6,6 +6,7 @@
   align-items: center;
   cursor: pointer;
  overflow: hidden;
+ position: relative;
 
 }
 
@@ -15,11 +16,21 @@
   border:  5px solid brown;
   border-bottom: none;
   width: 90%;
+  height: 100px; 
+  background:url('../assets/Pregação_porta_aberta_por_Deus_sermão_esboço_estudo_bíblico.jpg') no-repeat 51% 60% ;
+  background-size: 1000px;
 }
 
-
+.chao {
+  width: 100%;
+  height: 100px;  background-color: #DDD;
+  transform: perspective(80px) rotateX(50deg);
+  position: absolute;
+  bottom: -40px;
+}
 .porta {
   display: flex;
+  height: 290px;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
@@ -28,6 +39,7 @@
   transform-origin: right center; 
     transform: perspective(1000px) rotateY(0deg);
     transition: all .8s;
+    z-index: 1;
 }
 
 .numero {
@@ -44,11 +56,7 @@
   left: 20px;
 }
 
-.chao {
-  width: 100%;
-  height: 10px;
-  background-color: #DDD;
-}
+
 
 .area:hover .batente,.batente.selecionada{
   border-color: yellow;
@@ -59,5 +67,5 @@
 }
 
  .porta.aberta {
- transform: perspective(1000px) rotateY(-90deg) ; 
+ transform: perspective(1000px) rotateY(-85deg) ; 
 }
