@@ -14,7 +14,7 @@ const Porta = (props: PortaProps) => {
   // const [abrir, setAbri] = React.useState(false)
 
   const alternarSelecao = () => props.onChange(porta.alternarSelecao())
-  const abrir = e => {
+  const abrir = (e : React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.stopPropagation()
     props.onChange(porta.abrir())
   }
