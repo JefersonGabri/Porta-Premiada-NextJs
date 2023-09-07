@@ -17,6 +17,10 @@
   border-bottom: none;
   width: 90%;
   height: 100px; 
+  background: url('../assets/casa-abandonada_98.webp') no-repeat center center;
+  background-size: 550px;
+}
+.batente.temPresente {
   background:url('../assets/Pregação_porta_aberta_por_Deus_sermão_esboço_estudo_bíblico.jpg') no-repeat 51% 60% ;
   background-size: 1000px;
 }
@@ -58,7 +62,7 @@
 
 
 
-.area:hover .batente,.batente.selecionada{
+.batente.selecionada{
   border-color: yellow;
 }
 .area:hover .macaneta,

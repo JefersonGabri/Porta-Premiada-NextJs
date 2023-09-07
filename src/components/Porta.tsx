@@ -1,6 +1,7 @@
 import styles from '../styles/Porta.module.css'
 import React from 'react'
 import PortaModel from '@/models/porta'
+import Presente from './Presente'
 
 interface PortaProps {
   value: PortaModel
@@ -10,8 +11,7 @@ interface PortaProps {
 
 const Porta = (props: PortaProps) => {
   const porta = props.value
-  const selecionada = porta.selecionada ? styles.selecionada : ''
-  // const [abrir, setAbri] = React.useState(false)
+  const selecionada = porta.selecionada && !porta.aberta? styles.selecionada : ''
 
   const alternarSelecao = () => props.onChange(porta.alternarSelecao())
   const abrir = (e : React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -22,7 +22,8 @@ const Porta = (props: PortaProps) => {
 
   return (
     <div className={`${styles.area} `} onClick={alternarSelecao} >
-      <div className={`${styles.batente}  ${selecionada}`}>
+      {porta.temPresente && <Presente />}
+      <div className={`${styles.batente}  ${selecionada} ${porta.temPresente ? styles.temPresente : ''}`}>
         <div className={`${styles.porta} ${porta.aberta ? styles.aberta : ''} `}>
           <div className={`${styles.macaneta} `} onClick={abrir}></div>
           <div className={styles.numero}>{porta.numero}</div>

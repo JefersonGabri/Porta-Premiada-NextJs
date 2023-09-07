@@ -1,12 +1,27 @@
 import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
-import Presente from '@/components/Presente';
 import Porta from '@/components/Porta';
-import PortaModel from '@/models/porta';
 import {useState} from 'react'
+import criarPortas, { atualizarPortas } from '@/functions/portas';
 
 export default function Home() {
-  const [p1, setP1] = useState(new PortaModel(1))
+
+  const [portas, setPortas] = useState(criarPortas(3,1))
+
+
+
+  function renderizarPortas() {
+    return portas.map(porta =>
+      <Porta 
+      key={porta.numero} 
+      value={porta} 
+      onChange={novaPorta => {
+        setPortas(atualizarPortas(portas, novaPorta))
+      }
+    }/>
+)
+  }
+
   return (
     <>
       <Head>
@@ -16,9 +31,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Presente />
         <div className={styles.portas}>
-          <Porta value={p1} onChange={novaPorta => setP1(novaPorta)}/>
+          {renderizarPortas()}
         </div>
       </main>
     </>
