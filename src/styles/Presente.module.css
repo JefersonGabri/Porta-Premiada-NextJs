@@ -4,9 +4,10 @@
    flex-direction: column;
   align-items: center;
   max-width: max-content;
-  margin: 0 auto;
-  z-index: 1;
-  bottom: 40px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
 }
 
 .presente::after {
@@ -15,7 +16,6 @@
   height: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  z-index: 1;
   bottom: -20px;
   filter: blur(3px);
 }

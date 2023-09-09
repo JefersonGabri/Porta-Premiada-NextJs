@@ -4,41 +4,45 @@ export default class PortaModel {
   #selecionada: boolean
   #aberta: boolean
 
-  constructor(numero: number, temPresente: boolean = false, selecionada: boolean = false, aberta: boolean = false) {
-    this.#numero =  numero
-    this.#temPresente =  temPresente
-    this.#selecionada =  selecionada
-    this.#aberta =  aberta
+  constructor(numero: number, temPresente = false, selecionada = false, aberta = false) {
+      this.#numero = numero
+      this.#temPresente = temPresente
+      this.#selecionada = selecionada
+      this.#aberta = aberta
   }
 
   get numero() {
-    return this.#numero
-  }
-  get temPresente(){
-    return this.#temPresente
-  }
-  get selecionada(){
-    return this.#selecionada
-  }
-  get aberta(){
-    return this.#aberta
+      return this.#numero
   }
 
-  desselecionar(){
-    const selecionada = false
-    return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
+  get temPresente() {
+      return this.#temPresente
+  }
+
+  get selecionada() {
+      return this.#selecionada
+  }
+
+  get aberta() {
+      return this.#aberta
+  }
+
+  get fechada() {
+      return !this.aberta
+  }
+
+  desselecionar() {
+      const selecionada = false
+      return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)        
   }
 
   alternarSelecao() {
-    const selecionada = !this.selecionada
-
-    return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
+      const selecionada = !this.selecionada
+      return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
   }
+
   abrir() {
-    const aberta = true
-  
-    return new PortaModel(this.numero, this.temPresente, this.selecionada, aberta)
+      const aberta = true
+      return new PortaModel(this.numero, this.temPresente, this.selecionada, aberta)
   }
 }
-
-

@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  align-items: center;
+}
+.form label {
+  align-self: flex-start;
+}
+.form input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.form span {
+  position: fixed;
+  right: 10px;
+  background-color: red;
+  padding: 5px 10px;
+  border-radius: 10px;
+  transform: translateX(250px);
+  animation: animeLeft 5s ease-in forwards;
+}
+
+@keyframes animeLeft {
+  0%{
+  transform: translateX(250px);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(250px);
+    opacity: 0;
+  }
+}

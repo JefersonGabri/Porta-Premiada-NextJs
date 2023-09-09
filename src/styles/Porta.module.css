@@ -16,9 +16,10 @@
   border:  5px solid brown;
   border-bottom: none;
   width: 90%;
-  height: 100px; 
+  max-height: 280px; 
   background: url('../assets/casa-abandonada_98.webp') no-repeat center center;
   background-size: 550px;
+  z-index: 2;
 }
 .batente.temPresente {
   background:url('../assets/Pregação_porta_aberta_por_Deus_sermão_esboço_estudo_bíblico.jpg') no-repeat 51% 60% ;
@@ -27,14 +28,15 @@
 
 .chao {
   width: 100%;
-  height: 100px;  background-color: #DDD;
+  height: 140px;  background-color: #DDD;
   transform: perspective(80px) rotateX(50deg);
   position: absolute;
   bottom: -40px;
+  z-index: 0;
 }
 .porta {
   display: flex;
-  height: 290px;
+  height: 276px;
   flex-direction: column;
   align-items: center;
   flex-grow: 1;
@@ -43,7 +45,6 @@
   transform-origin: right center; 
     transform: perspective(1000px) rotateY(0deg);
     transition: all .8s;
-    z-index: 1;
 }
 
 .numero {

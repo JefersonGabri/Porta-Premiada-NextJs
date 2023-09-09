@@ -22,12 +22,12 @@ const Porta = (props: PortaProps) => {
 
   return (
     <div className={`${styles.area} `} onClick={alternarSelecao} >
-      {porta.temPresente && <Presente />}
       <div className={`${styles.batente}  ${selecionada} ${porta.temPresente ? styles.temPresente : ''}`}>
         <div className={`${styles.porta} ${porta.aberta ? styles.aberta : ''} `}>
           <div className={`${styles.macaneta} `} onClick={abrir}></div>
           <div className={styles.numero}>{porta.numero}</div>
         </div>
+        {porta.temPresente && <Presente />}
       </div>
         <div className={styles.chao}></div>
     </div>
